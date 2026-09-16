@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Faq from "./components/Faq";
 import WhatsAppButton from "./components/WhatsAppButton";
 import Footer from "./components/Footer";
+import ComoLlegar from "./components/ComoLlegar";
 
 const NUMERO_WHATSAPP = "5492610000000"; // cod país 54 + 9 + cod área sin 0 + número sin 15
 const HORARIOS = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
@@ -71,6 +72,7 @@ export default function App() {
         <img src="/img/gomon-1.jpg" alt="Bajando el atuel en gomón" className="aspect-[3/4] object-cover rounded-sm" /> */}
       </section>
           <Faq />
+          <ComoLlegar />
       {/* TALÓN DE RESERVA */}
       <section className="max-w-3xl mx-auto px-6 pb-24">
         <form
