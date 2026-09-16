@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-arena: #EDE3D0;
+  --color-roca: #7A3B23;
+  --color-rio: #134E4A;
+  --color-texto: #241E18;
+  --color-espuma: #FBF7EE;
+  --color-noche: #1B1611;
+  --color-whatsapp: #25D366;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+}
+
+body {
+  background-color: #EDE3D0;
+  color: #241E18;
+}
