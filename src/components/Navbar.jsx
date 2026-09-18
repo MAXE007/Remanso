@@ -1,10 +1,10 @@
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const LINKS = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#galeria", label: "Galería" },
-  { href: "#como-llegar", label: "Cómo llegar" },
-  { href: "#preguntas-frecuentes", label: "Preguntas frecuentes" },
+  { to: "/", label: "Inicio" },
+  { to: "/como-llegar", label: "Cómo llegar" },
+  { to: "/preguntas-frecuentes", label: "Preguntas frecuentes" },
 ];
 
 export default function Navbar() {
@@ -14,20 +14,20 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-noche text-espuma">
       <div className="relative flex items-stretch h-20">
         <div className="relative bg-rio pl-6 pr-10 flex items-center rounded-br-[2.5rem]">
-          <a href="#inicio" className="font-display text-lg whitespace-nowrap">
+          <Link to="/" className="font-display text-lg whitespace-nowrap">
             Valle Grande
-          </a>
+          </Link>
         </div>
 
         <div className="hidden md:flex flex-1 items-center justify-end gap-10 px-10 text-sm tracking-wide uppercase">
           {LINKS.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-rio transition-colors">
+            <NavLink key={link.to} to={link.to} className={({ isActive }) => `hover:text-rio transition-colors ${isActive ? "text-rio" : ""}`}>
               {link.label}
-            </a>
+            </NavLink>
           ))}
-          <a href="#reserva" className="bg-roca text-espuma px-5 py-2.5 rounded-sm normal-case tracking-normal hover:bg-roca/90 transition-colors">
+          <Link to="/reservar" className="bg-roca text-espuma px-5 py-2.5 rounded-sm normal-case tracking-normal hover:bg-roca/90 transition-colors">
             Reservar
-          </a>
+          </Link>
         </div>
 
         <button
@@ -49,13 +49,11 @@ export default function Navbar() {
       {abierto && (
         <div className="md:hidden px-6 pb-6 flex flex-col gap-4 uppercase text-sm tracking-wide">
           {LINKS.map((link) => (
-            <a key={link.href} href={link.href} onClick={() => setAbierto(false)} className="hover:text-rio">
-              {link.label}
-            </a>
+            <Link key={link.to} to={link.to} onClick={() => setAbierto(false)} className="hover:text-rio">{link.label}</Link>
           ))}
-          <a href="#reserva" onClick={() => setAbierto(false)} className="bg-roca text-espuma px-5 py-2.5 rounded-sm normal-case text-center">
+          <Link to="/reservar" onClick={() => setAbierto(false)} className="bg-roca text-espuma px-5 py-2.5 rounded-sm normal-case text-center">
             Reservar
-          </a>
+          </Link>
         </div>
       )}
     </nav>
