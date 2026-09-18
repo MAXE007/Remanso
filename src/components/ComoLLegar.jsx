@@ -6,17 +6,13 @@ export default function ComoLlegar() {
         Valle Grande queda a 30 km de la ciudad de San Rafael, subiendo por la Ruta 144 hacia la cordillera.
       </p>
 
-      {/* Reemplazar este div por el iframe real cuando tengamos el link de Google Maps:
       <iframe
-        src="https://www.google.com/maps/embed?pb=..."
+        src="https://www.google.com/maps?q=-34.8321553,-68.476116&output=embed"
         className="w-full h-80 rounded-sm border border-roca/20"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         title="Cómo llegar a Valle Grande"
-      /> */}
-      <div className="w-full h-80 rounded-sm border border-roca/20 bg-roca/10 flex items-center justify-center text-roca/50 text-sm">
-        mapa próximamente
-      </div>
+      />
     </section>
   );
 }
